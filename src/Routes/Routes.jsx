@@ -1,0 +1,40 @@
+import { createBrowserRouter } from "react-router";
+import Root from "../MainLayout/Root";
+import Home from "../pages/Home/Home";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AuthLayout from "../MainLayout/AuthLayout";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Root,
+    children:[
+      {
+        index: true,
+        Component: Home
+      }
+    ]
+  },
+  {
+    path:'/auth',
+    Component: AuthLayout,
+    children:[
+      {
+        path:'/auth/login',
+        Component: Login
+      },
+      {
+        path:'/auth/register',
+        Component: Register
+      }
+    ]
+  },
+  {
+    path: '/*',
+    Component: ErrorPage
+  }
+]);
+
+export default router;
