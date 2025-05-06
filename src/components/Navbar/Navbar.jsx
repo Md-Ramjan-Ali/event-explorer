@@ -1,13 +1,27 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import profileLogo from "../../assets/profileLogo.png";
+import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Navbar = () => {
+
+  const { user, logOut } = use(AuthContext);
+
+  const handleLogOut=()=>{
+    logOut()
+  }
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/profile">My Profile</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -46,9 +60,15 @@ const Navbar = () => {
         <div className="w-1/16 cursor-pointer">
           <img className="rounded-full" src={profileLogo} alt="" />
         </div>
-        <Link to="/auth/login" className="btn">
-          Login
-        </Link>
+        {user ? (
+          <button onClick={handleLogOut} className="btn">
+            LogOut
+          </button>
+        ) : (
+          <Link to="/auth/login" className="btn">
+            Login
+          </Link>
+        )}
       </div>
     </nav>
   );

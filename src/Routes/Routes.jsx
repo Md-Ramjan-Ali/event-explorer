@@ -5,6 +5,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AuthLayout from "../MainLayout/AuthLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivetRoutes from "../PrivetRoutes/PrivetRoutes";
+import Profile from "../pages/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,10 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home
+      },
+      {
+        path:'/profile',
+        element:<PrivetRoutes><Profile></Profile></PrivetRoutes>
       }
     ]
   },

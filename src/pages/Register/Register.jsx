@@ -1,12 +1,46 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const { createUser, setUser, updateUser } = use(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    console.log(name, photo, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
-    <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl mt-10">
+    <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10">
       <div className="card-body">
         <h1 className="text-3xl font-bold text-center">Register now!</h1>
-        <form className="fieldset">
+        <form onSubmit={handleRegister} className="fieldset">
           {/* Name  */}
           <label className="label">Name</label>
           <input
@@ -38,28 +72,47 @@ const Register = () => {
           />
 
           {/* password  */}
-          <label className="label">Password</label>
-          <input
-            name="password"
-            type="password"
-            className="input"
-            placeholder="Password"
-            required
-          />
-
-          <button className="btn btn-neutral mt-4">Register</button>
-          <p className="font-semibold text-center pt-5">
-            Allready Have An Account ?{" "}
-            <Link className="text-green-500 underline" to="/auth/login">
-              Login
-            </Link>
-          </p>
+          <div className="relative">
+            <label className="label">Password</label>
+            <input
+              name="password"
+              type={showPassword ? "text" : "password"}
+              className="input"
+              placeholder="Password"
+              required
+              minLength="6"
+              pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}"
+              title="Must be at least 6 characters, lowercase letter, uppercase letter"
+            />
+            <button
+              onClick={() => {
+                setShowPassword(!showPassword);
+              }}
+              className="btn btn-xs absolute top-6.5 right-6"
+            >
+              {showPassword ? (
+                <FaEyeSlash size={15}></FaEyeSlash>
+              ) : (
+                <FaEye size={15}></FaEye>
+              )}
+            </button>
+          </div>
+          <button type="submit" className="btn btn-neutral mt-4">
+            Register
+          </button>
         </form>
+        <p className="font-semibold text-center pt-5">
+          Already Have An Account ?{" "}
+          <Link className="text-green-500 underline" to="/auth/login">
+            Login
+          </Link>
+        </p>
+        {/* google login */}
         <div className="text-center">
-          <div class="flex items-center justify-center my-4">
-            <div class="flex-grow border-t border-gray-300"></div>
-            <span class="mx-4 text-gray-500">Or login with</span>
-            <div class="flex-grow border-t border-gray-300"></div>
+          <div className="flex items-center justify-center my-4">
+            <div className="flex-grow border-t border-gray-300"></div>
+            <span className="mx-4 text-gray-500">Or login with</span>
+            <div className="flex-grow border-t border-gray-300"></div>
           </div>
           <div>
             <button className="btn bg-white text-black border-[#e5e5e5]">

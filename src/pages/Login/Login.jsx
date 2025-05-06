@@ -1,12 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Login = () => {
+  const { loginUser, setUser } = use(AuthContext);
+  const navigate=useNavigate()
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    loginUser(email, password)
+      .then((result) => {
+        const user =result.user
+        console.log(user);
+        setUser(user);
+        navigate('/')
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
-    <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl mt-20">
+    <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 ">
       <div className="card-body">
         <h1 className="text-3xl font-bold text-center">Login now!</h1>
-        <form className="fieldset">
+        <form onSubmit={handleLogin} className="fieldset">
           {/* email  */}
           <label className="label">Email</label>
           <input
@@ -29,19 +50,22 @@ const Login = () => {
           <div>
             <a className="link link-hover">Forgot password?</a>
           </div>
-          <button className="btn btn-neutral mt-4">Login</button>
-          <p className="font-semibold text-center pt-5">
-            Dont't Have An Account ?{" "}
-            <Link className="text-green-500 underline" to="/auth/register">
-              Register
-            </Link>
-          </p>
+          <button type="submit" className="btn btn-neutral mt-4">
+            Login
+          </button>
         </form>
+        <p className="font-semibold text-center pt-5">
+          Dont't Have An Account ?{" "}
+          <Link className="text-green-500 underline" to="/auth/register">
+            Register
+          </Link>
+        </p>
+        {/* google login */}
         <div className="text-center">
-          <div class="flex items-center justify-center my-4">
-            <div class="flex-grow border-t border-gray-300"></div>
-            <span class="mx-4 text-gray-500">Or login with</span>
-            <div class="flex-grow border-t border-gray-300"></div>
+          <div className="flex items-center justify-center my-4">
+            <div className="flex-grow border-t border-gray-300"></div>
+            <span className="mx-4 text-gray-500">Or login with</span>
+            <div className="flex-grow border-t border-gray-300"></div>
           </div>
           <div>
             <button className="btn bg-white text-black border-[#e5e5e5]">
