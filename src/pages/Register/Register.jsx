@@ -7,7 +7,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const { createUser, setUser, updateUser } = use(AuthContext);
+  const { createUser, setUser, updateUser, loginGoogle } = use(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -36,6 +36,18 @@ const Register = () => {
         console.log(error);
       });
   };
+
+    const handleLoginGoogle = () => {
+      loginGoogle()
+        .then((result) => {
+          const user = result.user;
+          setUser(user);
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
   return (
     <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10">
       <div className="card-body">
@@ -115,7 +127,11 @@ const Register = () => {
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
           <div>
-            <button className="btn bg-white text-black border-[#e5e5e5]">
+            {/* login with google */}
+            <button
+              onClick={handleLoginGoogle}
+              className="btn bg-white text-black border-[#e5e5e5]"
+            >
               <svg
                 aria-label="Google logo"
                 width="16"

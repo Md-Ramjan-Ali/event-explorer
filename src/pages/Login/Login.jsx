@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Login = () => {
-  const { loginUser, setUser } = use(AuthContext);
-  const navigate=useNavigate()
+  const { loginUser, setUser, loginGoogle } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,10 +14,22 @@ const Login = () => {
 
     loginUser(email, password)
       .then((result) => {
-        const user =result.user
+        const user = result.user;
         console.log(user);
         setUser(user);
-        navigate('/')
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleLoginGoogle = () => {
+    loginGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -68,7 +80,11 @@ const Login = () => {
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
           <div>
-            <button className="btn bg-white text-black border-[#e5e5e5]">
+            {/* google login */}
+            <button
+              onClick={handleLoginGoogle}
+              className="btn bg-white text-black border-[#e5e5e5]"
+            >
               <svg
                 aria-label="Google logo"
                 width="16"
