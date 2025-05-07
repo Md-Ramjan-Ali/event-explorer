@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../../AuthProvider/AuthContext";
+import { MdEmail } from "react-icons/md";
 
 const Profile = () => {
   const { user, setUser, updateUser } = use(AuthContext);
@@ -21,11 +22,11 @@ const Profile = () => {
   };
   return (
     <div className="card max-w-3xl mx-auto  my-5 p-5 shadow-sm space-y-3">
-      <div className="flex justify-center">
+      <div className="flex justify-center tooltip" data-tip={displayName}>
         <img className="w-56 h-56 border" src={photoURL} alt="" />
       </div>
       <h2 className="text-xl font-bold text-center">Name: {displayName}</h2>
-      <p className="font-semibold text-center">Email: {email}</p>
+      <p className="font-semibold flex justify-center items-center gap-2"><MdEmail size={24}/> {email}</p>
       {/* update profile */}
       <div className="max-w-2xl md:w-xl mx-auto mt-10">
         <h2 className="text-xl font-bold text-center mb-2">Update Profile</h2>

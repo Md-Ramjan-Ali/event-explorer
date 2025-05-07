@@ -4,7 +4,7 @@ import { MdDateRange } from "react-icons/md";
 import { Link } from "react-router";
 
 const EventCard = ({ event }) => {
-  console.log(event);
+  // console.log(event);
   const {
     id,
     name,

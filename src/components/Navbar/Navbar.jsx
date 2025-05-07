@@ -1,15 +1,16 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
-import profileLogo from "../../assets/profileLogo.png";
+// import profileLogo from "../../assets/profileLogo.png";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Navbar = () => {
-
   const { user, logOut } = use(AuthContext);
+  console.log(user);
+  // const { displayName } = user;
 
-  const handleLogOut=()=>{
-    logOut()
-  }
+  const handleLogOut = () => {
+    logOut();
+  };
   const links = (
     <>
       <li>
@@ -57,8 +58,19 @@ const Navbar = () => {
         <ul className="flex gap-5">{links}</ul>
       </div>
       <div className="navbar-end gap-5">
-        <div className="w-1/16 cursor-pointer">
-          <img className="rounded-full" src={profileLogo} alt="" />
+        <div
+          className="cursor-pointer tooltip tooltip-left"
+          data-tip={user?.displayName}
+        >
+          {user ? (
+            <img
+              className="rounded w-20 h-10 card shadow-sm"
+              src={`${user ? user.photoURL : ""}`}
+              alt=""
+            />
+          ) : (
+            ""
+          )}
         </div>
         {user ? (
           <button onClick={handleLogOut} className="btn">
