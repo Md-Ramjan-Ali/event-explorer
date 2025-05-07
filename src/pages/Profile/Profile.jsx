@@ -1,9 +1,57 @@
-import React from 'react';
+import React, { use } from "react";
+import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Profile = () => {
+  const { user, setUser, updateUser } = use(AuthContext);
+  const { displayName, email, photoURL } = user;
+
+  const handleEditProfile = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+
+
+    updateUser({ displayName: name, photoURL: photo })
+      .then(() => {
+        setUser({ displayName: name, photoURL: photo });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
-    <div>
-      <h1>This is my profile</h1>
+    <div className="card max-w-3xl mx-auto  my-5 p-5 shadow-sm space-y-3">
+      <div className="flex justify-center">
+        <img className="w-56 h-56 border" src={photoURL} alt="" />
+      </div>
+      <h2 className="text-xl font-bold text-center">Name: {displayName}</h2>
+      <p className="font-semibold text-center">Email: {email}</p>
+      {/* update profile */}
+      <div className="max-w-2xl md:w-xl mx-auto mt-10">
+        <h2 className="text-xl font-bold text-center mb-2">Update Profile</h2>
+        <form onSubmit={handleEditProfile} className="fieldset">
+          {/* Name  */}
+          <label className="label">Name</label>
+          <input
+            name="name"
+            type="text"
+            className="input w-full"
+            placeholder="Name"
+            required
+          />
+
+          {/* Photo URl  */}
+          <label className="label mt-2">Photo URl </label>
+          <input
+            name="photo"
+            type="text"
+            className="input w-full"
+            placeholder="Photo URl"
+            required
+          />
+          <button className="btn mt-2">Update Profile</button>
+        </form>
+      </div>
     </div>
   );
 };
