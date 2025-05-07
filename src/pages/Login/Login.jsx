@@ -1,10 +1,11 @@
-import React, { use } from "react";
+import React, { use, useRef } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Login = () => {
-  const { loginUser, setUser, loginGoogle } = use(AuthContext);
+  const { loginUser, setUser, loginGoogle, forgetPassword } = use(AuthContext);
   const navigate = useNavigate();
+  const emailRef = useRef();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -35,6 +36,19 @@ const Login = () => {
         console.log(error);
       });
   };
+
+  const handleForgetPassword = () => {
+    const email = emailRef.current.value;
+
+    forgetPassword(email)
+      .then(() => {
+        alert("Reset password");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 ">
       <div className="card-body">
@@ -45,6 +59,7 @@ const Login = () => {
           <input
             name="email"
             type="email"
+            ref={emailRef}
             className="input"
             placeholder="Email"
             required
@@ -59,7 +74,7 @@ const Login = () => {
             required
           />
 
-          <div>
+          <div onClick={handleForgetPassword}>
             <a className="link link-hover">Forgot password?</a>
           </div>
           <button type="submit" className="btn btn-neutral mt-4">

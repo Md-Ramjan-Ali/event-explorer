@@ -6,7 +6,6 @@ import { AuthContext } from "../../AuthProvider/AuthContext";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-
   const { createUser, setUser, updateUser, loginGoogle } = use(AuthContext);
 
   const handleRegister = (e) => {
@@ -15,8 +14,6 @@ const Register = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-
-    console.log(name, photo, email, password);
 
     createUser(email, password)
       .then((result) => {
@@ -37,17 +34,17 @@ const Register = () => {
       });
   };
 
-    const handleLoginGoogle = () => {
-      loginGoogle()
-        .then((result) => {
-          const user = result.user;
-          setUser(user);
-          navigate("/");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
+  const handleLoginGoogle = () => {
+    loginGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10">
       <div className="card-body">
@@ -96,6 +93,7 @@ const Register = () => {
               pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}"
               title="Must be at least 6 characters, lowercase letter, uppercase letter"
             />
+
             <button
               onClick={() => {
                 setShowPassword(!showPassword);
@@ -119,6 +117,7 @@ const Register = () => {
             Login
           </Link>
         </p>
+
         {/* google login */}
         <div className="text-center">
           <div className="flex items-center justify-center my-4">
