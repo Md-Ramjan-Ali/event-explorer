@@ -1,6 +1,7 @@
 import React from "react";
 import sliderImg1 from "../../assets/sport slide.jpg";
-import sliderImg2 from "../../assets/art exsibation slide.jpg";
+import sliderImg2 from "../../assets/art exsibation.jpg";
+import sliderImg3 from "../../assets/Technical event slide.jpg";
 
 const SliderHero = () => {
   return (
@@ -30,10 +31,7 @@ const SliderHero = () => {
             </div>
           </div>
           <div id="slide3" className="carousel-item relative w-full">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-              className="w-full"
-            />
+            <img src={sliderImg3} className="w-full h-[450px]" />
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
               <a href="#slide2" className="btn btn-circle">
                 ❮

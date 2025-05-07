@@ -1,0 +1,68 @@
+[
+  {
+    "id": "event_001",
+    "name": "Tech Innovators Conference 2025",
+    "category": "Conference",
+    "entry_fee": 500,
+    "date": "15/05/2025",
+    "time": "10:00 AM to 4:00 PM",
+    "location": "Dhaka Convention Center, Dhaka",
+    "description": "The Tech Innovators Conference 2025 is a premier event bringing together tech innovators, entrepreneurs, and thought leaders from around the globe. This conference serves as an exciting platform for sharing the latest advancements in technology, particularly in fields like artificial intelligence, the Internet of Things (IoT), blockchain, and more. Attendees will have the opportunity to engage with industry experts, participate in hands-on workshops, and discover innovative tech products that are shaping the future. Whether you're a startup enthusiast, investor, or a tech professional, this event is a must-attend to stay ahead in the fast-evolving tech landscape.",
+    "thumbnail": "https://i.ibb.co.com/sz3QsH6/confarance-event-5.jpg"
+  },
+  {
+    "id": "event_002",
+    "name": "Modern Art Expo",
+    "category": "Art Exhibition",
+    "entry_fee": 200,
+    "date": "25/05/2025",
+    "time": "12:00 PM to 6:00 PM",
+    "location": "Dhaka Art Gallery, Gulshan",
+    "description": "The Modern Art Expo is a one-of-a-kind exhibition that celebrates the works of contemporary artists from across the country and beyond. This event offers a rich variety of artworks, including paintings, sculptures, photography, and digital art, all showcasing the unique perspectives and techniques of the artists. Visitors will have the chance to immerse themselves in modern art, engage with artists during live sessions, and explore the growing influence of art in today's digital age. Whether you're an art enthusiast or simply looking to experience something new, the Modern Art Expo promises to inspire and provoke thought through its diverse and vibrant exhibits.",
+    "thumbnail": "https://i.ibb.co.com/LDLcVBZt/art-exsibation-4.jpg"
+  },
+  {
+    "id": "event_003",
+    "name": "Youth Leadership Workshop",
+    "category": "Workshop",
+    "entry_fee": 150,
+    "date": "01/06/2025",
+    "time": "9:30 AM to 1:30 PM",
+    "location": "BRAC Learning Center, Dhaka",
+    "description": "The Youth Leadership Workshop is designed for young individuals who aspire to make a difference in their communities. This interactive workshop will focus on developing essential leadership skills, including effective communication, problem-solving, strategic thinking, and team collaboration. Participants will engage in practical exercises and discussions led by experienced mentors and leaders from various sectors. Whether you're aiming to lead a social cause, start a business, or lead a team in your school or workplace, this workshop will provide you with the tools and confidence needed to become a successful and impactful leader.",
+    "thumbnail": "https://i.ibb.co.com/Qvdf7QK9/workshop-event-2.jpg"
+  },
+  {
+    "id": "event_004",
+    "name": "National Cricket League Final",
+    "category": "Sports Event",
+    "entry_fee": 800,
+    "date": "10/06/2025",
+    "time": "3:00 PM to 9:00 PM",
+    "location": "Sher-e-Bangla National Cricket Stadium, Mirpur",
+    "description": "Get ready for the most anticipated match of the year as the top two teams battle it out in the final of the National Cricket League. This exciting event promises to be a thrilling showcase of talent, teamwork, and high-performance cricket. Fans will witness some of the best national cricketers in action, competing for the prestigious title in front of a packed stadium. The National Cricket League Final offers an incredible atmosphere, complete with music, fan engagement activities, and plenty of food and merchandise. If you're a cricket fan, this is the event you can't afford to miss!",
+    "thumbnail": "https://i.ibb.co.com/rRhH6sBj/sports-event-2.jpg"
+  },
+  {
+    "id": "event_005",
+    "name": "Women in Tech Conference",
+    "category": "Conference",
+    "entry_fee": 400,
+    "date": "18/06/2025",
+    "time": "11:00 AM to 5:00 PM",
+    "location": "International Convention City Bashundhara, Dhaka",
+    "description": "The Women in Tech Conference is an empowering event that celebrates the achievements of women in the technology industry. This conference will highlight the stories of successful women who are breaking barriers in tech and inspire the next generation of women leaders. The event features keynote speakers, panel discussions, and hands-on workshops on topics such as AI, data science, cybersecurity, and entrepreneurship. Attendees will have the opportunity to network with industry leaders, discover new career opportunities, and gain insights into how women are shaping the future of technology. This is the ultimate platform for learning, inspiration, and empowerment.",
+    "thumbnail": "https://i.ibb.co.com/fV2TkMgt/confarance-event.jpg"
+  },
+  {
+    "id": "event_006",
+    "name": "Digital Marketing Bootcamp",
+    "category": "Workshop",
+    "entry_fee": 350,
+    "date": "22/06/2025",
+    "time": "10:30 AM to 4:30 PM",
+    "location": "Dhaka Business School, Dhanmondi",
+    "description": "The Digital Marketing Bootcamp is an intensive, hands-on workshop designed to equip attendees with the skills needed to thrive in the digital marketing world. The bootcamp will cover a wide range of topics, including search engine optimization (SEO), social media marketing, email campaigns, content marketing, and digital advertising. Led by industry experts with years of practical experience, this bootcamp is ideal for business owners, marketers, and anyone looking to enhance their digital presence. Whether you're looking to grow your own business or start a career in digital marketing, this bootcamp provides all the essential tools you need for success.",
+    "thumbnail": "https://i.ibb.co.com/qtQbtw3/workshop-event.jpg"
+  }
+]

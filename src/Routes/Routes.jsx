@@ -7,40 +7,54 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivetRoutes from "../PrivetRoutes/PrivetRoutes";
 import Profile from "../pages/Profile/Profile";
+import UpcomingDetails from "../pages/UpcomingDetails/UpcomingDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    children:[
+    children: [
       {
         index: true,
-        Component: Home
+        Component: Home,
       },
       {
-        path:'/profile',
-        element:<PrivetRoutes><Profile></Profile></PrivetRoutes>
-      }
-    ]
+        path: "/profile",
+        element: (
+          <PrivetRoutes>
+            <Profile></Profile>
+          </PrivetRoutes>
+        ),
+      },
+      {
+        path: "/upcomingdetails/:id",
+        element: (
+          <PrivetRoutes>
+            <UpcomingDetails></UpcomingDetails>
+          </PrivetRoutes>
+        ),
+        loader: () => fetch("/upcomingEventData.json"),
+      },
+    ],
   },
   {
-    path:'/auth',
+    path: "/auth",
     Component: AuthLayout,
-    children:[
+    children: [
       {
-        path:'/auth/login',
-        Component: Login
+        path: "/auth/login",
+        Component: Login,
       },
       {
-        path:'/auth/register',
-        Component: Register
-      }
-    ]
+        path: "/auth/register",
+        Component: Register,
+      },
+    ],
   },
   {
-    path: '/*',
-    Component: ErrorPage
-  }
+    path: "/*",
+    Component: ErrorPage,
+  },
 ]);
 
 export default router;
