@@ -84,7 +84,9 @@ const UpcomingDetails = () => {
               placeholder="Email"
               required
             />
-            <button className="btn mt-2">Reserve Seat</button>
+            <button className="btn mt-2 bg-primary text-white">
+              Reserve Seat
+            </button>
           </form>
         </div>
       </div>

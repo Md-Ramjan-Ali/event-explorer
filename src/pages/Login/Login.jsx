@@ -30,7 +30,10 @@ const Login = () => {
         const user = result.user;
         // console.log(user);
         setUser(user);
-        navigate(`${location.state? location.state : '/'}`);
+        setTimeout(() => {
+          
+          navigate(`${location.state? location.state : '/'}`);
+        }, 1000);
       })
       .catch((error) => {
          toast.error("Invalid password!", {
@@ -50,6 +53,16 @@ const Login = () => {
   const handleLoginGoogle = () => {
     loginGoogle()
       .then((result) => {
+        toast.success("Successfully login!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         const user = result.user;
         setUser(user);
         navigate("/");

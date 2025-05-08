@@ -3,7 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import { Helmet } from "react-helmet-async";
-import { toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 // import { toast } from "react-toastify";
 
 const Register = () => {
@@ -18,10 +18,22 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    const upper = /[A-Z]/.test(password);
+    const lower = /[a-z]/.test(password);
+    if (password.length < 6 || !upper || !lower) {
+      toast.error("Password must be at least 6 characters and include uppercase and lowercase letters", {
+        position: "top-center",
+        autoClose: 4000,
+        theme: "light",
+        transition: Slide,
+      });
+      return
+    }
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+      
         toast.success("Successfully register!", {
           position: "top-right",
           autoClose: 8000,
@@ -113,8 +125,8 @@ const Register = () => {
                 className="input"
                 placeholder="Password"
                 required
-                minLength="6"
-                pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}"
+               
+               
                 title="Must be at least 6 characters, lowercase letter, uppercase letter"
               />
 
