@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import { Helmet } from "react-helmet-async";
+// import { toast } from "react-toastify";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,11 +21,14 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user);
+        
         updateUser({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });
 
             navigate("/");
+
+          
           })
           .catch((error) => {
             console.log(error);
@@ -34,6 +38,9 @@ const Register = () => {
         console.log(error);
       });
   };
+
+  
+
 
   const handleLoginGoogle = () => {
     loginGoogle()

@@ -1,12 +1,40 @@
-# React + Vite
+# 🌟 Event Explorer – A Local Event Discovery Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌐 Live Site
+👉 [Visit Live](https://event-explorer-91db7.web.app/)
 
-Currently, two official plugins are available:
+## 📘 About the Project
+Event Explorer is a modern, user-friendly platform for discovering local events like conferences, workshops, sports events, and art exhibitions. The platform provides secure authentication, dynamic routing, and an engaging user interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Key Features
+- 🔐 Firebase Authentication (Google & Email/Password)
+- 📋 Browse events by category and view detailed event info
+- 🔒 Protected Routes for authenticated users
+- 🎨 Responsive design using Tailwind CSS & DaisyUI
+- 🧭 Dynamic page titles with React Helmet Async
+- 💫 Scroll animations with AOS
+- 🔔 Notifications with React Toastify
+- 🎯 Icons with React Icons and Lucide React
 
-## Expanding the ESLint configuration
+## 📦 NPM Packages Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Package               | Purpose                                   |
+|-----------------------|-------------------------------------------|
+| `react-icons`         | Icon library                             |
+| `lucide-react`        | Lightweight, customizable icons          |
+| `aos`                 | Animate On Scroll                        |
+| `react-toastify`      | Toast notifications                      |
+| `react-helmet-async`  | Dynamic `<head>` tag management          |
+| `firebase`            | Auth & backend                           |
+| `react-router-dom`    | Routing                                  |
+| `tailwindcss`         | Utility-first CSS                        |
+| `daisyui`             | Pre-styled Tailwind components           |
+
+## 🛠 Technologies
+- React
+- Firebase
+- Tailwind CSS
+- DaisyUI
+
+## 📁 Folder Structure
+
