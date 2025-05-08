@@ -2,12 +2,16 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 // import profileLogo from "../../assets/profileLogo.png";
 import { AuthContext } from "../../AuthProvider/AuthContext";
+import Loading from "../Loading/Loading";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
-  console.log(user);
   // const { displayName } = user;
-
+  
+  // if(loading){
+  //   return <Loading></Loading>
+  // }
+  console.log(user);
   const handleLogOut = () => {
     logOut();
   };
@@ -15,6 +19,9 @@ const Navbar = () => {
     <>
       <li>
         <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact Us</NavLink>
       </li>
       {user && (
         <>
@@ -64,8 +71,8 @@ const Navbar = () => {
         >
           {user ? (
             <img
-              className="rounded w-20 h-10 card shadow-sm"
-              src={`${user ? user.photoURL : ""}`}
+              className="rounded-full w-12 h-12 border card shadow-sm"
+              src={`${user ? user?.photoURL : ""}`}
               alt=""
             />
           ) : (

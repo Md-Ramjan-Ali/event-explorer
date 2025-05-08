@@ -17,7 +17,7 @@ const EventCard = ({ event }) => {
   
   } = event;
   return (
-    <div className="card card-side bg-base-100 shadow-sm">
+    <div className="card card-side bg-base-100 shadow-sm" data-aos="zoom-in">
       <div className="">
         <figure>
           <img
@@ -43,11 +43,11 @@ const EventCard = ({ event }) => {
             <IoLocation size={24} /> {location}
           </span>
         </p>
-        <p className="font-bold text-red-600">
-          Entry Fee: {entry_fee} Tk
-        </p>
+        <p className="font-bold text-red-600">Entry Fee: {entry_fee} Tk</p>
         <div className="card-actions">
-          <Link to={`/upcomingdetails/${id}`} className="btn btn-primary">View More</Link>
+          <Link to={`/upcomingdetails/${id}`} className="btn btn-primary">
+            View More
+          </Link>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import PrivetRoutes from "../PrivetRoutes/PrivetRoutes";
 import Profile from "../pages/Profile/Profile";
 import UpcomingDetails from "../pages/UpcomingDetails/UpcomingDetails";
+import ContactUs from "../pages/Contact/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         ),
         loader: () => fetch("/upcomingEventData.json"),
       },
+      {
+        path:'/contact',
+        element:<PrivetRoutes><ContactUs></ContactUs></PrivetRoutes>
+      }
     ],
   },
   {
