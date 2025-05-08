@@ -21,19 +21,22 @@ const Register = () => {
     const upper = /[A-Z]/.test(password);
     const lower = /[a-z]/.test(password);
     if (password.length < 6 || !upper || !lower) {
-      toast.error("Password must be at least 6 characters and include uppercase and lowercase letters", {
-        position: "top-center",
-        autoClose: 4000,
-        theme: "light",
-        transition: Slide,
-      });
-      return
+      toast.error(
+        "Password must be at least 6 characters and include uppercase and lowercase letters",
+        {
+          position: "top-center",
+          autoClose: 4000,
+          theme: "light",
+          transition: Slide,
+        }
+      );
+      return;
     }
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-      
+
         toast.success("Successfully register!", {
           position: "top-right",
           autoClose: 8000,
@@ -43,16 +46,13 @@ const Register = () => {
           draggable: true,
           progress: undefined,
           theme: "light",
-    
         });
-        
+
         updateUser({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });
 
             navigate("/");
-
-          
           })
           .catch((error) => {
             console.log(error);
@@ -63,15 +63,24 @@ const Register = () => {
       });
   };
 
-  
-
-
   const handleLoginGoogle = () => {
     loginGoogle()
       .then((result) => {
+        toast.success("Successfully login!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         const user = result.user;
         setUser(user);
-        navigate("/");
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       })
       .catch((error) => {
         console.log(error);
@@ -125,8 +134,6 @@ const Register = () => {
                 className="input"
                 placeholder="Password"
                 required
-               
-               
                 title="Must be at least 6 characters, lowercase letter, uppercase letter"
               />
 

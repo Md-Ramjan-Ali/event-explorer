@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 const Login = () => {
   const { loginUser, setUser, loginGoogle } = use(AuthContext);
   const navigate = useNavigate();
-  const location =useLocation()
+  const location = useLocation();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,36 +16,35 @@ const Login = () => {
     const password = e.target.password.value;
 
     loginUser(email, password)
-    .then((result) => {
+      .then((result) => {
         toast.success("Successfully login!", {
-           position: "top-right",
-           autoClose: 5000,
-           hideProgressBar: false,
-           closeOnClick: false,
-           pauseOnHover: true,
-           draggable: true,
-           progress: undefined,
-           theme: "light",
-         });
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         const user = result.user;
         // console.log(user);
         setUser(user);
         setTimeout(() => {
-          
-          navigate(`${location.state? location.state : '/'}`);
+          navigate(`${location.state ? location.state : "/"}`);
         }, 1000);
       })
       .catch((error) => {
-         toast.error("Invalid password!", {
-           position: "top-right",
-           autoClose: 5000,
-           hideProgressBar: false,
-           closeOnClick: false,
-           pauseOnHover: true,
-           draggable: true,
-           progress: undefined,
-           theme: "light",
-         });
+        toast.error("Invalid password!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         console.log(error);
       });
   };
@@ -65,7 +64,9 @@ const Login = () => {
         });
         const user = result.user;
         setUser(user);
-        navigate("/");
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       })
       .catch((error) => {
         console.log(error);

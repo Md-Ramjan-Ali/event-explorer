@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router';
+import logo from "../../assets/event-logo.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,10 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Left Column: Logo + Description */}
           <div>
-            <h2 className="text-2xl font-bold text-white">Eventora</h2>
+             <Link to="/" className="flex gap-1 items-center cursor-pointer">
+                      <img className="w-16 " src={logo} alt="" />
+                      <h2 className=" text-2xl font-bold ">Eventora</h2>
+                    </Link>
             <p className="mt-2 text-gray-400">
               Discover and reserve seats at the most exciting local events. Stay
               connected with your community.
