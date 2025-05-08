@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { FaEnvelope, FaHome, FaPhoneAlt } from "react-icons/fa";
 
 const ContactUs = () => {

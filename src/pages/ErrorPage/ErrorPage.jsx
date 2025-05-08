@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import errorPage from '../../assets/ErrorPage.png'
+import { Helmet } from 'react-helmet-async';
 
 const ErrorPage = () => {
   return (

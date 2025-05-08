@@ -1,5 +1,6 @@
 import React, { use, useRef } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthContext';
+import { Helmet } from 'react-helmet-async';
 
 const ResetPassword = () => {
 const { forgetPassword } = use(AuthContext);
