@@ -5,6 +5,9 @@ import errorPage from '../../assets/ErrorPage.png'
 const ErrorPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Eventora | Error</title>
+      </Helmet>
       <div className="flex flex-col justify-center items-center space-y-4 pt-10 lg:pt-15">
         <div className="card bg-base-100 w-96 shadow-sm">
           <img src={errorPage} alt="" />
