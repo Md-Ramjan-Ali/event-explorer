@@ -1,17 +1,11 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
-// import profileLogo from "../../assets/profileLogo.png";
 import { AuthContext } from "../../AuthProvider/AuthContext";
-import Loading from "../Loading/Loading";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
-  // const { displayName } = user;
-  
-  // if(loading){
-  //   return <Loading></Loading>
-  // }
-  console.log(user);
+
+  // console.log(user);
   const handleLogOut = () => {
     logOut();
   };
