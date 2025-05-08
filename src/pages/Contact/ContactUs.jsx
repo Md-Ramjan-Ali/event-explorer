@@ -8,7 +8,7 @@ const ContactUs = () => {
       <Helmet>
         <title>Eventora | ContactUs</title>
       </Helmet>
-      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-10 gap-5 mt-10">
+      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-10 gap-5 mt-10 p-5">
         <div className=" lg:col-span-4">
           <h2 className="text-2xl font-bold mb-4">Office Address</h2>
 
