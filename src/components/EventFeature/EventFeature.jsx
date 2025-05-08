@@ -3,9 +3,9 @@ import React from 'react';
 
 const EventFeature = () => {
   return (
-    <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center my-20">
+    <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center my-40">
       {/* Feature 1 */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center" data-aos="zoom-in-right">
         <div className="w-24 h-24 rounded-xl flex items-center justify-center bg-gray-400 hover:bg-red-500">
           <CalendarDays className="w-10 h-10 text-white" />
         </div>
@@ -14,14 +14,13 @@ const EventFeature = () => {
         </h3>
         <div className="w-12 h-0.5 bg-red-500 mt-2 mb-4"></div>
         <p className="text-sm text-gray-600 px-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
-          vel velit
+          Discover and explore events around the clock—any time, any day.
         </p>
         <button className="btn btn-outline btn-sm mt-4">DETAILS</button>
       </div>
 
       {/* Feature 2 */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center" data-aos="zoom-in">
         <div className="w-24 h-24 rounded-xl flex items-center justify-center bg-gray-400">
           <MapPin className="w-10 h-10 text-white" />
         </div>
@@ -30,14 +29,13 @@ const EventFeature = () => {
         </h3>
         <div className="w-12 h-0.5 bg-red-500 mt-2 mb-4"></div>
         <p className="text-sm text-gray-600 px-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
-          vel velit
+          Browse events hosted at top venues, from city arenas to art galleries.
         </p>
         <button className="btn btn-outline btn-sm mt-4">DETAILS</button>
       </div>
 
       {/* Feature 3 */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center" data-aos="zoom-in">
         <div className="w-24 h-24 rounded-xl flex items-center justify-center bg-gray-400">
           <Users className="w-10 h-10 text-white" />
         </div>
@@ -46,14 +44,13 @@ const EventFeature = () => {
         </h3>
         <div className="w-12 h-0.5 bg-red-500 mt-2 mb-4"></div>
         <p className="text-sm text-gray-600 px-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
-          vel velit
+          Learn from industry leaders at expert-led conferences and workshops.
         </p>
         <button className="btn btn-outline btn-sm mt-4">DETAILS</button>
       </div>
 
       {/* Feature 4 */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center" data-aos="zoom-in-left">
         <div className="w-24 h-24 rounded-xl flex items-center justify-center bg-gray-400">
           <Music className="w-10 h-10 text-white" />
         </div>
@@ -62,8 +59,8 @@ const EventFeature = () => {
         </h3>
         <div className="w-12 h-0.5 bg-red-500 mt-2 mb-4"></div>
         <p className="text-sm text-gray-600 px-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed
-          vel velit
+          Enjoy entertainment, networking, and after-parties to wrap up your
+          day.
         </p>
         <button className="btn btn-outline btn-sm mt-4">DETAILS</button>
       </div>

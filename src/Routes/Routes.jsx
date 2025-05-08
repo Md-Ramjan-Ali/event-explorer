@@ -9,6 +9,9 @@ import PrivetRoutes from "../PrivetRoutes/PrivetRoutes";
 import Profile from "../pages/Profile/Profile";
 import UpcomingDetails from "../pages/UpcomingDetails/UpcomingDetails";
 import ContactUs from "../pages/Contact/ContactUs";
+import Terms from "../pages/FooterPages/Terms";
+import Privacy from "../pages/FooterPages/Privacy";
+import ResetPassword from "../pages/ResetPassword/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +42,14 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<PrivetRoutes><ContactUs></ContactUs></PrivetRoutes>
+      },
+      {
+        path:'/terms',
+        Component: Terms
+      },
+      {
+        path:'/privacy',
+        Component: Privacy
       }
     ],
   },
@@ -54,6 +65,10 @@ const router = createBrowserRouter([
         path: "/auth/register",
         Component: Register,
       },
+    {
+      path:'/auth/resetpassword',
+      Component: ResetPassword
+    }
     ],
   },
   {

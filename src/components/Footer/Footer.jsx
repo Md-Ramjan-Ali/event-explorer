@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Left Column: Logo + Description */}
           <div>
-            <h2 className="text-2xl font-bold text-white">Event Explorer</h2>
+            <h2 className="text-2xl font-bold text-white">Eventora</h2>
             <p className="mt-2 text-gray-400">
               Discover and reserve seats at the most exciting local events. Stay
               connected with your community.
@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Middle Column: Links */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-3">
-              Quick Links
+              Important Info
             </h3>
             <ul className="space-y-2 text-gray-300">
               <li>
