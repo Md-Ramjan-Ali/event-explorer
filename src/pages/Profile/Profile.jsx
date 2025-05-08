@@ -49,7 +49,7 @@ const Profile = () => {
           <h2 className="text-xl font-bold text-center mb-2">Update Profile</h2>
           <form onSubmit={handleEditProfile} className="fieldset">
             {/* Name  */}
-            <label className="label">Name</label>
+            <label className="label font-semibold">Name</label>
             <input
               name="name"
               type="text"
@@ -59,7 +59,7 @@ const Profile = () => {
             />
 
             {/* Photo URl  */}
-            <label className="label mt-2">Photo URl </label>
+            <label className="label mt-2 font-semibold">Photo URl </label>
             <input
               name="photo"
               type="text"
@@ -67,7 +67,9 @@ const Profile = () => {
               placeholder="Photo URl"
               required
             />
-            <button className="btn mt-2">Update Profile</button>
+            <button className="btn mt-2 bg-primary text-white">
+              Update Profile
+            </button>
           </form>
         </div>
       </div>

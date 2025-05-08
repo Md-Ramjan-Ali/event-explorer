@@ -37,7 +37,10 @@ const { forgetPassword } = use(AuthContext);
             placeholder="Enter your email"
             required
           />
-          <button onClick={handleForgetPassword} className="btn">
+          <button
+            onClick={handleForgetPassword}
+            className="btn bg-primary text-white"
+          >
             Reset Password
           </button>
         </div>

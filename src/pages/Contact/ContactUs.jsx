@@ -97,7 +97,7 @@ const ContactUs = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="btn px-8 py-3 rounded font-semibold"
+                className="btn px-8 py-3 rounded font-semibold bg-primary text-white"
               >
                 SEND MESSAGE
               </button>
