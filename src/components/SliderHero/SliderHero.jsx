@@ -6,7 +6,7 @@ import sliderImg3 from "../../assets/Technical event slide.jpg";
 const SliderHero = () => {
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto ">
+      <div className="max-w-screen-xl mx-auto p-3 lg:p-0">
         <div className="carousel w-full  my-3 rounded-2xl">
           <div id="slide1" className="carousel-item relative w-full">
             <img src={sliderImg1} className="w-full h-[450px]" />

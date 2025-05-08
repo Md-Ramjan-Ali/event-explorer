@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { MdDateRange } from "react-icons/md";
 import { useLoaderData, useParams } from "react-router";
+import { toast } from "react-toastify";
 
 const UpcomingDetails = () => {
   const { id } = useParams();
@@ -21,6 +22,16 @@ const UpcomingDetails = () => {
 
   const handleReserveSeat = (e) => {
     e.preventDefault();
+    toast.success("Successfully reserve seat!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
   return (
     <div>

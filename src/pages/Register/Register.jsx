@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 // import { toast } from "react-toastify";
 
 const Register = () => {
@@ -21,6 +22,17 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user);
+        toast.success("Successfully register!", {
+          position: "top-right",
+          autoClose: 8000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+    
+        });
         
         updateUser({ displayName: name, photoURL: photo })
           .then(() => {

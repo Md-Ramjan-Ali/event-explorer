@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import { MdEmail } from "react-icons/md";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const { user, setUser, updateUser } = use(AuthContext);
@@ -12,7 +13,16 @@ const Profile = () => {
     const name = e.target.name.value;
     const photo = e.target.photo.value;
 
-
+    toast.success("Successfully Update profile!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     updateUser({ displayName: name, photoURL: photo })
       .then(() => {
         setUser({ displayName: name, photoURL: photo });

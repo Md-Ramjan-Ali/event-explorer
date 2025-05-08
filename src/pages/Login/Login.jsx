@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { loginUser, setUser, loginGoogle } = use(AuthContext);
@@ -15,13 +16,33 @@ const Login = () => {
     const password = e.target.password.value;
 
     loginUser(email, password)
-      .then((result) => {
+    .then((result) => {
+        toast.success("Successfully login!", {
+           position: "top-right",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: false,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+           theme: "light",
+         });
         const user = result.user;
         // console.log(user);
         setUser(user);
         navigate(`${location.state? location.state : '/'}`);
       })
       .catch((error) => {
+         toast.error("Invalid password!", {
+           position: "top-right",
+           autoClose: 5000,
+           hideProgressBar: false,
+           closeOnClick: false,
+           pauseOnHover: true,
+           draggable: true,
+           progress: undefined,
+           theme: "light",
+         });
         console.log(error);
       });
   };

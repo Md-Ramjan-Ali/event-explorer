@@ -8,8 +8,8 @@ const ContactUs = () => {
       <Helmet>
         <title>Eventora | ContactUs</title>
       </Helmet>
-      <div className="max-w-screen-xl mx-auto grid grid-cols-10 gap-5 mt-10">
-        <div className="col-span-4">
+      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-10 gap-5 mt-10">
+        <div className=" lg:col-span-4">
           <h2 className="text-2xl font-bold mb-4">Office Address</h2>
 
           {/* Dhaka Office */}
@@ -53,7 +53,7 @@ const ContactUs = () => {
           </div>
         </div>
         {/* message field */}
-        <div className="col-span-6">
+        <div className="lg:col-span-6">
           <h2 className="text-2xl font-bold mb-6 text-gray-800">
             GET IN TOUCH WITH US
           </h2>

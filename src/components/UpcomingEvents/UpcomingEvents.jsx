@@ -19,7 +19,7 @@ const UpcomingEvents = () => {
         </h1>
       </div>
       {/* upcoming events card */}
-      <div className="grid grid-cols-2 gap-5 mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
         {upcomingEvent.map((event) => (
           <EventCard key={event.id} event={event}></EventCard>
         ))}

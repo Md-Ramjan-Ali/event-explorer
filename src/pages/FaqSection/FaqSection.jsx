@@ -3,7 +3,7 @@ import React from 'react';
 const FaqSection = () => {
   return (
     <div className="max-w-screen-xl mx-auto">
-      <h1 className="text-2xl font-semibold text-center text-secondary">
+      <h1 className="text-lg lg:text-2xl font-semibold text-center text-secondary">
         Most people are not aware of these things about event planning
         companies. Let’s explore all the FAQs one by one below.
       </h1>
