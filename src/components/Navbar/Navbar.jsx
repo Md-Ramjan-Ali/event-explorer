@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import { toast } from "react-toastify";
+import logo from '../../assets/event-logo.png'
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -65,7 +66,10 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className=" text-2xl font-bold">Eventora</a>
+        <Link to="/" className="flex gap-1 items-center cursor-pointer">
+          <img className="w-16 " src={logo} alt="" />
+          <h2 className=" text-2xl font-bold ">Eventora</h2>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-5">{links}</ul>
